@@ -32,7 +32,8 @@ public class CustomRouteLocator {
                         .filters(f -> f
                                 .rewritePath("/MICROSERVICECLIENTS/(?<remaining>.*)", "/${remaining}")
                                 .addRequestHeader("X-request-origin", "Gateway")
-                                .filter(new CustomerGatewayFilter()))
+                                .filter(new CustomerGatewayFilter())
+                        )
                         .uri("lb://microserviceclients")  // Assurez-vous que "microserviceclients" est le nom correct de votre microservice dans le registre
                 )
                 .build();

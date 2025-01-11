@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
+
 @RestController
 public class ClientController implements HealthIndicator {
 
@@ -67,6 +68,7 @@ public class ClientController implements HealthIndicator {
     // Créer un client
     @PostMapping("/clients")
     public Client createClient(@RequestBody Client client) {
+
         return clientDao.save(client);
     }
 
